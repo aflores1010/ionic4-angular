@@ -1,8 +1,4 @@
+<h1>Posts</h1>
 <ul class="list-group">
-    <li class="list-group-item" *ngFor="let post of mockPosts">
-        <h2>{{post.title}}</h2>
-        <!-- Mock con fotos -->
-        <!-- <img [src]="post.url" alt=""> -->
-        <p>{{post.body}}</p>
-    </li>
+    <app-post *ngFor="let post of mockPosts | async" [post]="post" (postClicked)="postListener($event)"></app-post>
 </ul>

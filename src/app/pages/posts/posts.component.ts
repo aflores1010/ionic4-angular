@@ -14,10 +14,16 @@ export class PostsComponent implements OnInit {
   constructor(public dataService: DataService) { }
 
   ngOnInit() {
-    this.dataService.getPosts().subscribe(res => {
-      this.mockPosts = res;
-      console.log(this.mockPosts);
-    });
+    this.mockPosts = this.dataService.getPosts();
+
+    // this.dataService.getPosts().subscribe(res => {
+    //   this.mockPosts = res;
+    //   console.log(this.mockPosts);
+    // });
+  }
+
+  postListener( id) {
+    console.log('Click en ', id);
   }
 
 }
