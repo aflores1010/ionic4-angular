@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class PostComponent implements OnInit {
 
   @Input() post;
-  @Output() postClicked = new EventEmitter();
+  @Output() postClicked = new EventEmitter<number>();
 
   constructor() { }
 
